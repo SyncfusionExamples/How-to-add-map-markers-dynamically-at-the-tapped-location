@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MapMarker_Cooridnate"
+             xmlns:maps="clr-namespace:Syncfusion.SfMaps.XForms;assembly=Syncfusion.SfMaps.XForms"
+             x:Class="MapMarker_Cooridnate.MainPage">
+
+    <local:SfMapExt x:Name="sfMaps">
+        
+        <local:SfMapExt.Layers>
+            
+            <maps:ImageryLayer LayerType="OSM" x:Name="layer">
+
+                <maps:ImageryLayer.Markers>
+                    <local:CustomMarker Label = "California" Latitude = "37" 
+                                    Longitude = "-120" x:Name="marker" />
+                </maps:ImageryLayer.Markers>
+                
+                <maps:ImageryLayer.MarkerTemplate>
+                    <DataTemplate>
+                        <Image x:Name="markerImage" HorizontalOptions="Center" 
+                               Source="{Binding Image}"
+                               VerticalOptions="Center" HeightRequest="15" WidthRequest="15"/>
+                    </DataTemplate>
+                </maps:ImageryLayer.MarkerTemplate>
+                
+            </maps:ImageryLayer>
+            
+        </local:SfMapExt.Layers>
+        
+    </local:SfMapExt>
+    
+</ContentPage>
